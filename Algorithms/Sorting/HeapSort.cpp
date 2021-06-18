@@ -8,18 +8,18 @@ using namespace std;
 // an index in arr[]. n is size of heap
 void heapify(int arr[], int n, int i)
 {
-	int largest=i; // largest as root
-	int left=2*i+1; // left = 2*i + 1
-	int right = 2*i+2; // right = 2*i + 2
+	int largest = i; // largest as root
+	int left = 2 * i + 1; // left = 2*i + 1
+	int right = 2 * i + 2; // right = 2*i + 2
 
 	// if left child is larger than root
-	if (left<n && arr[left]>arr[largest])
-		largest=left;
+	if (left < n && arr[left] > arr[largest])
+		largest = left;
 	// if right child is larger than largest
-	if (right<n && arr[right]>arr[largest])
-		largest=right;
+	if (right < n && arr[right] > arr[largest])
+		largest = right;
 	// if largest is not root
-	if (largest!=i){
+	if (largest != i) {
 		swap(arr[i], arr[largest]);
 		// recursively heapify the affected sub - tree
 		heapify(arr, n, largest);
@@ -31,10 +31,10 @@ void heapify(int arr[], int n, int i)
 void heapSort(int arr[], int n)
 {
 	// build heap (rearrange array)
-	for (int i=n/2-1; i>=0; i--)
-		heapify(arr, n,i);
+	for (int i = n / 2 - 1; i >= 0; i--)
+		heapify(arr, n, i);
 	// one by one extract an element from heap
-	for(int i=n-1; i>0; i--){
+	for (int i = n - 1; i > 0; i--) {
 		// move current root to end
 		swap(arr[0], arr[i]);
 		// call max heapify on the reduced heap

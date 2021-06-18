@@ -25,37 +25,37 @@ bubble_sort(){
 #include <iostream>
 using namespace std;
 
-void swap(int *xp, int *yp)  
-{  
-    int temp = *xp;  
-    *xp = *yp;  
-    *yp = temp;  
-}  
-
-void bubble_sort(int arr[], int size){
-	for (int i =0; i<size-1; i++){
-		for (int j = size-1; j>=i+1; j--){
-			if (arr[j]<arr[j-1]){
-				swap(&arr[j],&arr[j-1]);
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
+}
+void bubble_sort(int arr[], int size) {
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = size - 1; j >= i + 1; j--) {
+			if (arr[j] < arr[j - 1]) {
+				swap(&arr[j], &arr[j - 1]);
 			}
 		}
 	}
 
 }
 
-void printArray(int arr[], int size){ // just to print the array (optional implementation)
-	for (int i = 0; i<size; i++){
-		cout<<arr[i]<<" ";
+
+void printArray(int arr[], int size) { // just to print the array (optional implementation)
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
 	}
 }
 
-int main(){
-	int arr[] = {3,2,1,6,9,7};
-	int size = sizeof(arr)/sizeof(arr[0]);
-	cout<<"Given Array --> \n";
+int main() {
+	int arr[] = {3, 2, 1, 6, 9, 7};
+	int size = sizeof(arr) / sizeof(arr[0]);
+	cout << "Given Array --> \n";
 	printArray(arr, size);
 	bubble_sort(arr, size);
-	cout<<"\nSorted Array --> \n";
+	cout << "\nSorted Array --> \n";
 	printArray(arr, size);
 
 }
