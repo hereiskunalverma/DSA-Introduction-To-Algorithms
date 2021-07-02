@@ -53,12 +53,9 @@ int main()
 {
 	BstNode* root; // to store address of root address
 	root = NULL; // empty tree
-	root = Insert(root, 15);
-	root = Insert(root, 10);
-	root = Insert(root, 20);
-	root = Insert(root, 25);
-	root = Insert(root, 8);
-	root = Insert(root, 12);
+	vector<int> a {15, 10, 20, 25, 8, 12};
+	for (auto x : a)
+		root = Insert(root, x);
 	cout << "The tree is in sorted order : " << ln;
 	Inorder(root);
 	int num;
